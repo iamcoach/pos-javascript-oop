@@ -1,5 +1,7 @@
 'use strict';
 
+var _ = require('lodash');
+
 var Promotion = (function() {
 
   function Promotion(type, barcodes) {
@@ -7,15 +9,21 @@ var Promotion = (function() {
     this.barcodes = barcodes || [];
   }
 
+  // Test data, should load from database in future.
+  Promotion._promotions = [
+    new Promotion('BUY_TWO_GET_ONE_FREE', [
+      'ITEM000000',
+      'ITEM000001',
+      'ITEM000005'
+    ])
+  ];
+
   Promotion.all = function() {
-    // Test data, should load form database in future.
-    return [
-      new Promotion('BUY_TWO_GET_ONE_FREE', [
-        'ITEM000000',
-        'ITEM000001',
-        'ITEM000005'
-      ])
-    ];
+    return this._promotions;
+  };
+
+  Promotion.findByType = function(type) {
+    return _.find(this._promotions, { type: type });
   };
 
   return Promotion;

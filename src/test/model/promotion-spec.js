@@ -20,6 +20,26 @@ describe('Promotion', function() {
     });
   });
 
+  describe('.findByType()', function() {
+
+    beforeEach(function() {
+      Promotion._promotions = [
+        new Promotion('PROMOTION1', []),
+        new Promotion('PROMOTION2', [])
+      ];
+    });
+
+    it('can find promotion by type', function() {
+      var result = Promotion.findByType('PROMOTION1');
+      expect(result.type).to.equal('PROMOTION1');
+    });
+
+    it('if not find promotion then return undefined', function() {
+      var result = Promotion.findByType('PROMOTIONX');
+      expect(result).to.be.undefined;
+    });
+  });
+
   describe('#barcodes', function() {
 
     var promotion;

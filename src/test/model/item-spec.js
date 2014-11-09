@@ -22,6 +22,26 @@ describe('Item', function() {
     });
   });
 
+  describe('.findByBarcode()', function() {
+
+    beforeEach(function() {
+      Item._items = [
+        new Item('BARCODE1', 'ITEM1', 'UNIT1', 1.00),
+        new Item('BARCODE2', 'ITEM2', 'UNIT2', 2.00),
+      ];
+    });
+
+    it('can find item by barcode', function() {
+      var result = Item.findByBarcode('BARCODE1');
+      expect(result.barcode).to.equal('BARCODE1');
+    });
+
+    it('if not find item then return undefined', function() {
+      var result = Item.findByBarcode('BARCODEX');
+      expect(result).to.be.undefined;
+    });
+  });
+
   describe('#price', function() {
 
     var item;

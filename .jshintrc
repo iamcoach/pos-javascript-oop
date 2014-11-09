@@ -19,6 +19,7 @@
   "unused": true,
   "trailing": true,
   "smarttabs": true,
+  "expr": true,
   "globals": {
     /* MOCHA */
     "describe"   : false,

@@ -1,5 +1,7 @@
 'use strict';
 
+/* This is an example for reading & writing in console.
+
 var readline = require('readline');
 
 var rl = readline.createInterface({
@@ -7,10 +9,15 @@ var rl = readline.createInterface({
   output: process.stdout
 });
 
-// This is a example for reading & writing in console.
 rl.question('What is your name? ', function(answer) {
 
   console.log('Hello ' + answer + '!');
 
   rl.close();
 });
+
+*/
+
+var Main = require('./src/main/main');
+
+console.log(Main.printInvoice());

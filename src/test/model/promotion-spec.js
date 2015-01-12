@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var Promotion = require('../../main/model/promotion').Promotion;
+var Promotion = require('../../main/model/promotion');
 
 describe('Promotion', function() {
 

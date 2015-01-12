@@ -33,4 +33,4 @@ var Item = (function() {
 
 })();
 
-exports.Item = Item;
+module.exports = Item;

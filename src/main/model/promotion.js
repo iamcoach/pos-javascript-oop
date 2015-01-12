@@ -30,4 +30,4 @@ var Promotion = (function() {
 
 })();
 
-exports.Promotion = Promotion;
+module.exports = Promotion;

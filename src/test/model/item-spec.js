@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var Item = require('../../main/model/item').Item;
+var Item = require('../../main/model/item');
 
 describe('Item', function() {
 
